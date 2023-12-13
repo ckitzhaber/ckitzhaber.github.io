@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>QR Generator</title>
     <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js" async></script>
-    <script src="./scripts/index.js" async></script>
+    <script src="scripts/index.js" async></script>
 </head>
-<body onload="testing()">
-    <h2>Welcome</h2>
+<body id="body">
+    <!-- <h2>Welcome</h2> -->
+    <form id="urlForm" onsubmit="return false">
+        <label for="urlInput">Please enter the URL here:</label>
+        <input type="url" id="urlInput">
+
+        <button type="button" value="Submit" onclick="sendURL()">Submit</button>
+    </form>
+
     <div id="qr"></div>
+    <button id="stopRefresh" onclick="stopRefresh()" hidden>Stop</button>
+
 </body>
-
-
 </html>
