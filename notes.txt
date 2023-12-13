@@ -1,0 +1,9 @@
+To store information in a link, use query parameters
+To get information out of a link, use: URLSearchParams
+    Allows us to have a second page for out site which does the redirecting
+
+Can change domain
+
+How do I keep the URL accessible for both prof's and users
+    Could also pass it as a query parameter. Simple, not secure
+    Could use an api - could be costly
