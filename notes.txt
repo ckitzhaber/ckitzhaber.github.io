@@ -6,4 +6,12 @@ Can change domain
 
 How do I keep the URL accessible for both prof's and users
     Could also pass it as a query parameter. Simple, not secure
+        Could use a URL shortener to obscure the link a bit
     Could use an api - could be costly
+
+
+Date.now = Unix Timestamp (milliseconds)
+
+URL interface: https://developer.mozilla.org/en-US/docs/Web/API/URL
+URLSearchParams interface: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+QR Code Library: https://github.com/davidshimjs/qrcodejs
