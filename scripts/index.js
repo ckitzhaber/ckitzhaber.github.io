@@ -69,10 +69,11 @@ function redirectMessage()
 
     if(currTime < (time + duration*2))
     {
-        // window.open(redirectURL, '_blank');
-        // console.log("correct time");
-        location.replace(redirectURL);
-        // window.location.href = (redirectURL); //not sending properly
+        try{
+            const url = new URL(string);
+            location.replace(redirectURL);
+        }
+        catch (err){location.replace("https://" + redirectURL)}
     }
     else
     {
