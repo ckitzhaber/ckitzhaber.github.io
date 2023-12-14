@@ -15,3 +15,5 @@ Date.now = Unix Timestamp (milliseconds)
 URL interface: https://developer.mozilla.org/en-US/docs/Web/API/URL
 URLSearchParams interface: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 QR Code Library: https://github.com/davidshimjs/qrcodejs
+
+Encode URLs in order to pass them: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
