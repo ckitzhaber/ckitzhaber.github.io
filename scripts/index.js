@@ -1,7 +1,7 @@
 let duration = 5000;
 let stopExecution = false;
-let redirectLink = "./redirect.html";
-// let redirectLink = "ckitzhaber.github.io/redirect.html";
+// let redirectLink = "./redirect.html";
+let redirectLink = "ckitzhaber.github.io/redirect.html";
 
 
 function sendURL()
@@ -35,12 +35,12 @@ function generateQRCode(url)
       });
 
     //this is for testing only
-    let link = document.createElement('a')
-    link.innerHTML = "link";
-    link.setAttribute("href", (redirectLink + '?time=' + currTime + "&url=" + url)); //removing my query selectors
-    console.log("redirect.html" + '?time=' + currTime + "&url=" + url);
-    document.body.appendChild(link);
-    document.body.append(document.createElement('br'));
+    // let link = document.createElement('a')
+    // link.innerHTML = "link";
+    // link.setAttribute("href", (redirectLink + '?time=' + currTime + "&url=" + url)); //removing my query selectors
+    // console.log("redirect.html" + '?time=' + currTime + "&url=" + url);
+    // document.body.appendChild(link);
+    // document.body.append(document.createElement('br'));
 
 
     setTimeout(function() {generateQRCode(url)}, duration);
