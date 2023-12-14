@@ -67,7 +67,7 @@ function redirectMessage()
 
     if(currTime < (time + duration*2))
     {
-        window.location(url);
+        location.replace(redirectURL);
     }
     else
     {
