@@ -1,5 +1,7 @@
 let duration = 5000;
 let stopExecution = false;
+let redirectLink = "./redirect.html";
+// let redirectLink = "ckitzhaber.github.io/redirect.html";
 
 
 function sendURL()
@@ -18,13 +20,13 @@ function sendURL()
 
 function generateQRCode(url)
 {
-    if(stopExecution) return;
+    if(stopExecution) location.reload();
     let currTime = Date.now();
     let qr = document.getElementById('qr');
     qr.innerHTML = ``;
 
     const qrcode = new QRCode(qr, {
-        text: ("ckitzhaber.github.io/redirect.html" + '?time=' + currTime + "&url=" + url),
+        text: (redirectLink + '?time=' + currTime + "&url=" + url),
         width: 256,
         height: 256,
         colorDark : '#000',
@@ -35,7 +37,7 @@ function generateQRCode(url)
     //this is for testing only
     let link = document.createElement('a')
     link.innerHTML = "link";
-    link.setAttribute("href", ("redirect.html" + '?time=' + currTime + "&url=" + url)); //removing my query selectors
+    link.setAttribute("href", (redirectLink + '?time=' + currTime + "&url=" + url)); //removing my query selectors
     console.log("redirect.html" + '?time=' + currTime + "&url=" + url);
     document.body.appendChild(link);
     document.body.append(document.createElement('br'));
@@ -67,7 +69,10 @@ function redirectMessage()
 
     if(currTime < (time + duration*2))
     {
+        // window.open(redirectURL, '_blank');
+        // console.log("correct time");
         location.replace(redirectURL);
+        // window.location.href = (redirectURL); //not sending properly
     }
     else
     {
@@ -76,12 +81,3 @@ function redirectMessage()
         document.body.appendChild(errorMessage);
     }
 }
-
-/** use for redirect
-    console.log(window.location);
-    let url = new URL(window.location); // or construct from window.location
-    
-    let params = new URLSearchParams(url.search);
-    console.log(params.get('time'));
-    console.log(params.get('url'));
- */
