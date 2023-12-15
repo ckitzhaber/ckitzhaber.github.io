@@ -3,7 +3,6 @@ let stopExecution = false;
 // let redirectLink = "./redirect.html";
 let redirectLink = "ckitzhaber.github.io/redirect.html";
 
-
 function sendURL()
 {
     let form = document.getElementById('urlForm');
@@ -12,7 +11,6 @@ function sendURL()
     document.getElementById('stopRefresh').style.display = 'block'; //unhides stop button
     generateQRCode(url);
 }
-
 
 function generateQRCode(url)
 {
@@ -37,7 +35,6 @@ function stopRefresh()
     stopExecution = true;
 }
 
-
 function redirectMessage()
 {
     let url = new URL(window.location);    
@@ -48,12 +45,9 @@ function redirectMessage()
 
     if(currTime < (time + duration*2))
     {
-        try{
-            const url = new URL(string);
-            location.replace(redirectURL);
-        }
-        catch (err){location.replace("https://" + redirectURL)}
+        location.replace(redirectURL);
     }
+
     else
     {
         let errorMessage = document.createElement('h2')
@@ -71,4 +65,9 @@ function redirectMessage()
     document.body.appendChild(link);
     document.body.append(document.createElement('br'));
 
+    try{
+    const url = new URL(string);
+    location.replace(redirectURL);
+    }
+    catch(err){location.replace("https://" + redirectURL)}
 */
